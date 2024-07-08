@@ -1,15 +1,537 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Free Web tutorials">
-  <meta name="keywords" content="dvmbot,dvm,dvm par noam,dvmbot noamjaoui">
-  <meta name="author" content="John Doe">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Dvm BOT || La référence de la DVMion Discord</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="DVM BOT est à ce jour le bot le plus performant pour protéger votre serveur Discord de la suppression ! En plus contrairement aux autres bot, vous pouvez personnaliser votre sécurité en activant/désactivant les modules de DVMion.">
+	<meta name="keywords" content="dvmbot, bot, discord, anti, raid, modules, personnalisables, blacklist, performance, gratuit, rapide, chat, check, report, site, maintenance, notif, notification, lockdown, secure, securite, securise, urgence, auto, automatique, ban" />
+
+	<script src="/cdn-cgi/apps/head/6DvqDOKsN_n9A2dkWrTMFSZG_II.js"></script><link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.min.css">
+	<link rel="stylesheet" href="assets/css/magnificpopup.css">
+	<link rel="stylesheet" href="assets/css/jquery.mb.YTPlayer.min.css">
+	<link rel="stylesheet" href="assets/css/typography.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<link rel="shortcut icon" type="image/png" href="assets/img/icon/favicon.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		
+	<style>
+		.badge-warning {
+			background: #ffc107;   
+		}
+		.badge-primary {
+			background: #007bff;
+		}
+		.badge-success {
+			background: #28a745;   
+		}
+	</style>
 </head>
+
 <body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+	
+	<header id="header">
+		<div class="header-area">
+			<div class="container">
+				<div class="row">
+					<div class="menu-area">
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<div class="logo">
+								<a href="index.php"><h1 style="color:#fff"><i>DVM</i></h1></a>
+							</div>
+						</div>
+						<div class="col-md-9 hidden-xs hidden-sm">
+							<div class="main-menu">
+								<nav class="nav-menu">
+									<ul>
+																					<li class="active"><a href="#accueil">Accueil</a></li>
+											<li><a href="#fonctionnalites">Fonctionnalités</a></li>
+											<li><a href="#equipe">Equipe</a></li>
+											<li><a href="blacklist">Blacklist</a></li>
+											<li><a href="statistiques">Statistiques</a></li>
+											<li><a href="legal" target="_blank">CGU</a></li>
+											<li><a onclick="Swal.fire({icon: 'error',text: 'Panel en maintenance'})"><i class="fas fa-user-cog"></i> Panel</a></li>
+																													</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="col-sm-12 col-xs-12 visible-sm visible-xs">
+							<div class="mobile_menu"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>	<section class="slider-area" id="accueil">
+        <div class="container">
+            <div class="col-md-6 col-sm-6 hidden-xs">
+                <div class="row">
+                    <div class="slider-img">
+                        <img src="assets/img/mobile/slider-left-img.png" alt="slider image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row">
+                    <div class="slider-inner text-right">
+                        <h2>Sécurisez votre discord</h2>
+                        <h5>Installez DVM !</h5>
+                        <a href="https://discord.com/oauth2/authorize?scope=bot%20applications.commands&client_id=614755681936867328&permissions=268823807" target="_blank"><i class="fas fa-robot"></i>Ajouter le bot</a><br><br>
+						<a href="https://discord.gg/5C8Bg8CeMf" target="_blank"><i class="fab fa-discord"></i>Rejoindre le discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="service-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="service-single">
+                        <img src="assets/img/service/service-img1.png" alt="service image">
+                        <h2>Liste noire</h2>
+                        <p>Liste d'utilisateurs malveillants à bloquer</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 col-6">
+                    <div class="service-single">
+                        <img src="assets/img/service/service-img2.png" alt="service image">
+                        <h2>Alerte directe</h2>
+                        <p>Vous êtes informé de toute activité suspecte</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 col-6">
+                    <div class="service-single">
+                        <img src="assets/img/service/service-img3.png" alt="service image">
+                        <h2>Modulable</h2>
+                        <p>Configurez vous même votre sécurité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb--100">
+        <div class="container">
+            <div class="section-title">
+                <h2>A propos de DVM</h2>
+                <p>Voici quelques informations sur le bot</p>
+            </div>
+            <div class="row d-flex flex-center">
+                <div class="col-md-6 col-sm-6 hidden-xs">
+                    <div class="about-left-img">
+                        <img src="assets/img/about/abt-left-img.png" alt="image">
+                    </div>
+                </div>
 
-<p>All meta information goes in the head section...</p>
-
+                <div class="col-md-6 col-sm-6 col-xs-12 d-flex flex-center">
+                    <div class="about-content">
+                        <p>
+							DVM est un bot Discord dont la conception a débuté le 25/08/2019. Son développeur principal est deadfire, il en est également le propriétaire.
+							L'objectif premier de DVM est d'assurer la sécurité des Discord sur lesquels il se trouve au travers de différents modules que chaque propriétaire
+							de Discord peut décider d'activer ou désactiver. De nos jours le nombre d'attaques de Discord a été grandement multiplié et nombreux sont les serveurs
+							qui se voient perdre tous leurs rôles/salons, ruinant ainsi la communauté formée.<br>
+						</p>
+						<p>
+							DVM met à disposition de ses utilisateurs un système d'avertissement, permettant d'informer le propriétaire d'un Discord lorsqu'un utilisateur 
+							malveillant tente de rejoindre sa communauté. Contrairement à d'autres bots, DVM laisse le choix au propriétaire d'autoriser ou non le bot à bannir
+							automatiquement les utilisateurs malveillants.
+						</p>
+						</p>
+							DVM se voit comme le prochain bot incontournable de DVMion Discord, et continuera incessamment à lutter contre les petits malins qui souhaitent
+							détruire des serveurs discord.
+						</p>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="feature-area bg-gray ptb--100" id="fonctionnalites">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Fonctionnalités</h2>
+                <p>Voici les modules principaux du bot DVM</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="ft-content rtl">
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/1.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Module Maintenance</h2>
+                                <p>Activer une maintenance <b>p.maintenance on</b>, et bloquez ainsi l'arrivée de nouveaux utilisateurs</p>
+                            </div>
+                        </div>
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/2.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Module NoDestruction</h2>
+                                <p>Avec la commande <b>p.raid on</b>, protégez vos channels/roles de la suppression et soyez informé lorsque quelqu'un tente d'en supprimer</p>
+                            </div>
+                        </div>
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/3.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Alerte d'urgence</h2>
+                                <p>Lancer une alerte d'urgence <b>p.urgence</b> et nos opérateurs s'empresseront de venir vous aider en cas d'attaque</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm col-xs-12">
+                    <div class="ft-screen-img">
+                        <img src="assets/img/mobile/ft-screen-img.png" alt="image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="ft-content">
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/4.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Configurable</h2>
+                                <p>Vous pouvez choisir quelles fonctionnalités vous souhaitez activer sur votre serveur</p>
+                            </div>
+                        </div>
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/5.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Module MassKickBan</h2>
+                                <p>Avec <b>p.masskickban on</b>, expulsez automatiquement les membres/robots qui expulseront trop de membres en peu de temps</p>
+                            </div>
+                        </div>
+                        <div class="ft-single">
+                            <img src="assets/img/icon/feature/6.png" alt="icon">
+                            <div class="meta-content">
+                                <h2>Renseignements</h2>
+                                <p>Avec <b>p.check</b>, découvrez des informations sur vos membres (Date de création du compte, blacklisté, ...)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="achivement-area ptb--100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ach-single">
+                        <div class="icon"><i class="fa fa-user-secret"></i></div>
+                        <p><span class="counter">1391</span></p>
+                        <h5>Rapports</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ach-single">
+                        <div class="icon"><i class="fa fa-trophy"></i></div>
+                        <span class="counter">17</span><span style="font-size: 41px;font-weight: 700;">€</span>
+                        <h5>Dons</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ach-single">
+                        <div class="icon"><i class="fa fa-code"></i></div>
+                        <p><span class="counter">1652</p>
+                        <h5>Lignes de code</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="ach-single">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="counter">19396</span>
+                        <h5>Serveurs protégés</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<section id="avis">
+		<div class="testimonial-area ptb--100">
+			<div class="container">
+				<div class="section-title">
+					<h2>Avis des utilisateurs</h2>
+					<p>Voici une sélection d'avis de nos utilisateurs</p>
+				</div>
+				<div class="testimonial-slider owl-carousel">
+				
+							<div class="single-tst">
+								<img src="https://cdn.discordapp.com/avatars/687317661381558279/cd458d8e4f472ab631afb8d374f62843.webp?size=128" alt="author">
+								<h4></h4>
+								<span>Utilisateur</span>
+								<p>DVM m'a beaucoup aidé moi et un ami à nous protéger d'une grosse team de hackeur DVM a réussis a empécher que notre serveur se fassent hack alors qu'il attaquer via la consol avec des commandes ils on même essayé de raid en rejoignent mais il se sont fait kick plusieur fois et quand il on vu que DVM protéger super bien il on abandonné résultat : serveur en bonne états rien de cassé respect</p>
+							</div>
+						
+							<div class="single-tst">
+								<img src="https://cdn.discordapp.com/avatars/630035035759575040/a_af5d8ba4866bef3e02eb7cec955233d5.webp?size=128" alt="author">
+								<h4></h4>
+								<span>Utilisateur</span>
+								<p>DVM m'a aidé contre beaucoup de RAID , spam ect.</p>
+							</div>
+						
+							<div class="single-tst">
+								<img src="https://cdn.discordapp.com/avatars/782188462656716811/f8506ba1142bb5163edfc2b0a658b389.webp?size=128" alt="author">
+								<h4></h4>
+								<span>Utilisateur</span>
+								<p>Juste trop bien. Il y a plein de fonctionnalitées incroyables et même des règles déjà toutes prêtes ^^.</p>
+							</div>
+										</div>
+			</div>
+		</div>
+		<div class="testimonial-area ptb--100">
+			<div class="container">
+				<div class="section-title">
+					<h2>Ils nous font confiance</h2>
+				</div>
+				<div class="testimonial-slider owl-carousel">
+				<div class='single-tst'>
+								<span id='logo-110373943822540800'>
+									<img src='https://cdn.discordapp.com/icons/110373943822540800/a_1f8d2315499bb7db4b402d3a0f7a88ca.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-110373943822540800'>Discord Bots</h4>
+								<span>Serveur (73 813 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-799581681957732383'>
+									<img src='https://cdn.discordapp.com/icons/799581681957732383/f6e06a14be3e59c31efa1c926eccdc1c.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-799581681957732383'>Homework Help</h4>
+								<span>Serveur (48 844 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-1024163756403605555'>
+									<img src='https://cdn.discordapp.com/icons/1024163756403605555/6bf882fe46e9b2ec7ac73683e71f6d04.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-1024163756403605555'>KAITO</h4>
+								<span>Serveur (35 439 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-1018949914920755280'>
+									<img src='https://cdn.discordapp.com/icons/1018949914920755280/627462080a69dc73c809a3f1795cf7ca.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-1018949914920755280'>Sex & Club 🦋</h4>
+								<span>Serveur (34 830 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-867907428409290802'>
+									<img src='https://cdn.discordapp.com/icons/867907428409290802/cd608f0fdadfda2c334be935453b8245.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-867907428409290802'>Sigma Bot Vinted | Entraide Achat/Revente</h4>
+								<span>Serveur (32 143 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-756920107980161145'>
+									<img src='https://cdn.discordapp.com/icons/756920107980161145/3ba82d9df8aeece924a14c0bd8864555.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-756920107980161145'>best E-sport +30k</h4>
+								<span>Serveur (19 915 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-764605714475778110'>
+									<img src='https://cdn.discordapp.com/icons/764605714475778110/a_7fd8564403a84c99ac394576ccb7d811.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-764605714475778110'>Oneix Community</h4>
+								<span>Serveur (17 586 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-922180253835730945'>
+									<img src='https://cdn.discordapp.com/icons/922180253835730945/a_53b3d8de04553e5653d8b0bd76686f0c.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-922180253835730945'>🌟Secours de France RP Officiel🌟</h4>
+								<span>Serveur (15 555 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-261939673662750721'>
+									<img src='https://cdn.discordapp.com/icons/261939673662750721/6584ab9779be3e80b9d662540a07f526.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-261939673662750721'>/fr/ Radio Libre 🎙</h4>
+								<span>Serveur (15 285 membres)</span>
+							</div><div class='single-tst'>
+								<span id='logo-665897341160521730'>
+									<img src='https://cdn.discordapp.com/icons/665897341160521730/589df8a18c3910e6bb2591590233afa4.webp?size=256' alt='Server Icon'>
+								</span>
+								<h4 id='name-665897341160521730'>Danki Code</h4>
+								<span>Serveur (14 561 membres)</span>
+							</div>			</div>
+			</div>
+		</div>
+	</section>
+    <div class="video-area ptb--100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <h2>Vidéo Démo/Explication</h2>
+                    <p>Un de nos utilisateur a réalisé une vidéo de présentation, merci à lui !</p>
+                    <a class="expand-video" href="https://www.youtube.com/watch?v=NhtcmJNLqbA"><i class="fa fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="team-area bg-gray ptb--100" id="equipe">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre équipe</h2>
+                <p>Une équipe de passionnés, engagés pour la lutte contre les RAID</p>
+            </div>
+			<div class="row">
+			 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/195924421255364608/dadd185625b838831f1d575495ec5c38.webp?size=128">
+								</div>
+								<h4>deadfire3630#0</h4>
+								<span>Gérant</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/406759878070108174/2a8e13e651e673c9365d28efd8f9e53f.webp?size=128">
+								</div>
+								<h4>clashplayer#0</h4>
+								<span>Gérant</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/424485502071209984/2b615cd934a50c3aac0ebd648e126514.webp?size=128">
+								</div>
+								<h4>merlode#0</h4>
+								<span>Resp. Analyste</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/1107234183379693619/62e28598eaee6aa1911dd9a3f030ed45.webp?size=128">
+								</div>
+								<h4>hylted#0</h4>
+								<span>Analyste Confirmé</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/629410780584083456/29ef66593212c53ee4de95b26333c3ab.webp?size=128">
+								</div>
+								<h4>cyrnaxx#0</h4>
+								<span>Analyste Confirmé</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/687317661381558279/cd458d8e4f472ab631afb8d374f62843.webp?size=128">
+								</div>
+								<h4>minzoy#0</h4>
+								<span>Analyste Confirmé</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/628303764352401418/f2279c6ac8f6ebba84dfc3201398f43d.webp?size=128">
+								</div>
+								<h4>boxer0000#0</h4>
+								<span>Analyste</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/674170818472837124/1e4791f79fa802f6e755f08be21b9a28.webp?size=128">
+								</div>
+								<h4>nonogames#0</h4>
+								<span>Analyste</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+					 
+						<div class="col-md-4 col-sm-6">
+							<div class="single-team">
+								<div class="team-thumb">
+									<img src="https://cdn.discordapp.com/avatars/677215667019186210/a530c1fd240cb79f5fea1dc5fce12313.webp?size=128">
+								</div>
+								<h4>gaufrettes#0</h4>
+								<span>Analyste</span>
+								<div class="badge badge-primary">Indisponible</div>
+							</div>
+						</div>
+								</div>
+        </div>
+    </section>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/accueil.js"></script>
+	<footer>
+		<div class="footer-area" style="min-height: 250px">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<!--<a href="https://top.gg/bot/614755681936867328" >
+							<img src="https://top.gg/api/widget/status/614755681936867328.svg" alt="DVM" /><br>
+							<img src="https://top.gg/api/widget/servers/614755681936867328.svg" alt="DVM" /><br>
+							<img src="https://top.gg/api/widget/upvotes/614755681936867328.svg" alt="DVM" />
+						</a>-->
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a style="color:white" href="legal">Lien vers nos CGU</a>
+						<div class="trustpilot-widget" data-locale="fr-FR" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="5ec1ac7725d4cc00018716d5" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10">
+							<a href="https://fr.trustpilot.com/evaluate/DVM-bot.fr" style="color:#fff" target="_blank" rel="noopener">Trustpilot</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<p style="margin-top:10%">
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | Site réalisé par Deadfire et <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+	
+	<script src="assets/js/jquery-3.2.0.min.js"></script>
+	<script src="assets/js/jquery-ui.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.slicknav.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/magnific-popup.min.js"></script>
+	<script src="assets/js/counterup.js"></script>
+	<script src="assets/js/jquery.waypoints.min.js"></script>
+	<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="assets/js/theme.js"></script>
+	
+	<script src="assets/js/fontawesome.js"></script>
+	<!--<script src="https://kit.fontawesome.com/d644046960.js"></script>-->
+	
+	<script src="https://static.copyrighted.com/badges/helper.js"></script>
+	
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8a0214f8ad356f11","r":1,"version":"2024.4.1","token":"d83e554de2a4484badc9becb0bfd723d"}' crossorigin="anonymous"></script>
 </body>
+
 </html>
